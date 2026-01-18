@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Caveat:wght@400..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Londrina+Outline&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Marker+Hatch&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../public/styles/main.css">
+    <title>ExhangeCurrency</title>
+</head>
+
+<body>
+
+    <div class="d-flex justify-center">
+        <div class="nav-bar bg-primary-color border-radius-4 d-inline relative pl-2 pr-2">
+            <ul class="nav-list p-0 d-flex gap-4 primary-text-color nav-list-style justify-space-around primary-font-style">
+                <li> Home </li>
+                <li> About Us </li>
+                <li> Contact Us </li>
+                <li> <a target="_blank" href="https://www.exchangerate-api.com/docs/overview"> API Documentation </a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="mobile-view d-flex flex-row flex-wrap justify-center m-2 gap-1">
+        <div class="avalibleCurrency div-design p-1">
+            <h1 class="m-0 primary-text-color center-align"> Currencies for Exchange </h1>
+            <ul id="currency-list" class="scoll-list">
+
+            </ul>
+        </div>
+
+        <div class="selectCurrency div-design p-1">
+
+        </div>
+
+    </div>
+
+    <script src="../server.js"></script>
+</body>
+</html>
