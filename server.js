@@ -1,28 +1,26 @@
-import express, { response, urlencoded } from 'express';
-import axios from 'axios';
-import 'dotenv/config'
-
+import express from 'express';
+import getAvaliableCurrency from './controllers/getAvaliableCurrency.js';
 
 const APP = express();
-const apiKey = process.env.API_KEY;
 const port = 3000;
 
 APP.use(express.urlencoded({extended: true}));
 
+APP.use(express.static("public"));
 
-async function getAvaliableCurrency() {
-    try {
-        const response_data = await axios.get(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`);
-        const avaliable_currencies = response.data.conversion_rates;
-        console.log(avaliable_currencies);
-    } catch (error) {
-        console.error("Unable to fetch data", error);
-    }
-}
+// console.log(express.static);
+// console.log(express.static("public"));
 
+APP.set('view engine', 'ejs');
+APP.set('views' , './views');
 
+APP.get("/" , async (request, response) =>{
+    const avaliable_currencies = await getAvaliableCurrency();
+
+    return response.render(         // refresh : where to render , what to render
+        "index" , { currencies : avaliable_currencies});
+});
 
 APP.listen(port , () => {
     console.log(`app listening at port = ${port}`)
-})
-
+});

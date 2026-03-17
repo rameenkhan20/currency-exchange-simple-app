@@ -13,8 +13,8 @@ body{
     background-color: rgb(8, 55, 8);
     width: 420px;
     height: 250px;
-    border-radius: 2rem;
     border: 3px solid yellow;
+    border-radius: 2rem;
 }
 
 .d-flex { display: flex;}
@@ -85,6 +85,11 @@ a{
 .line-height1-9{line-height: 1.9rem;}
 .bold-text{font-weight: bolder !important;}
 .small-text{font-weight:200 !important;}
+
+.li{
+    font-family: "times new roman", sans-serif;
+    color: rgb(235, 235, 24);
+}
 
 .scoll-list{
     max-height: max-content;
